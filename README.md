@@ -297,7 +297,7 @@ python -m unittest discover -s ../tests -v
 
 ## Estrutura do Projeto
 
-```
+```text
 pipeline-aws/
 ├── src/
 │   ├── handler.py          # Lambda do pipeline — entry point
@@ -319,7 +319,6 @@ pipeline-aws/
 └── samples/
     ├── sample_valid.csv
     └── sample_valid.json
-```
 
 ---
 
