@@ -55,7 +55,7 @@ No servers to manage. No manual intervention. Full observability from day one.
                                    ┌──────────────────┐            ┌─────────────────┐  ┌─────────────────┐
                                    │  S3: processed/  │            │  S3: errors/    │  │   CloudWatch    │
                                    └────────┬─────────┘            └─────────────────┘  │  Logs + Metrics │
-                                            │                                            └─────────────────┘
+                                            │                                           └─────────────────┘
                                             ▼
                                    ┌─────────────────┐
                                    │    DynamoDB     │
