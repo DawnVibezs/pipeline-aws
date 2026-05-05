@@ -292,7 +292,7 @@ pip install -r requirements.txt
 # 4. Rode os testes (A partir da pasta src/)
 cd src
 python -m unittest discover -s ../tests -v
-
+```
 ---
 
 ## Estrutura do Projeto
@@ -319,7 +319,7 @@ pipeline-aws/
 └── samples/
     ├── sample_valid.csv
     └── sample_valid.json
-
+```
 ---
 
 *Construído com Python 3.14 · AWS Lambda · S3 · DynamoDB · API Gateway · CloudWatch*
