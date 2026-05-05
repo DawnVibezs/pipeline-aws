@@ -41,9 +41,9 @@ No servers to manage. No manual intervention. Full observability from day one.
 ## Architecture
 
 ```
-┌─────────────┐     PUT file     ┌──────────────┐    S3 trigger   ┌─────────────────────┐
-│   Client    │ ───────────────► │  S3: raw/    │ ───────────────► │   λ Lambda          │
-└─────────────┘                  └──────────────┘                  │   (Python)          │
+┌─────────────┐     PUT file     ┌──────────────┐    S3 trigger     ┌─────────────────────┐
+│   Client    │ ───────────────► │  S3: raw/    │ ───────────────►  │   λ Lambda          │
+└─────────────┘                  └──────────────┘                   │   (Python)          │
                                                                     │                     │
                                                                     │  • Detect format    │
                                                                     │  • Validate schema  │
