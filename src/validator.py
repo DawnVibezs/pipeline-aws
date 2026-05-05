@@ -1,6 +1,6 @@
 import logging
 import re
-from datetime import datetime
+from datetime import datetime, timezone # <-- Adicionado timezone aqui
 
 logger = logging.getLogger(__name__)
 
@@ -9,11 +9,10 @@ REQUIRED_FIELDS = {"id", "name", "email"}
 
 # Campos com tipos esperados (campo -> tipo Python)
 TYPE_RULES = {
-    "id":    str,
+    "id":   str,
     "name":  str,
     "email": str,
 }
-
 
 def validate_records(records: list[dict]) -> tuple[list[dict], list[dict]]:
     """
@@ -47,6 +46,10 @@ def validate_records(records: list[dict]) -> tuple[list[dict], list[dict]]:
 def _validate_single(record: dict, index: int) -> list[str]:
     """Retorna lista de mensagens de erro para um único registro."""
     errs = []
+
+    # PROTEÇÃO: Se não for dicionário, barra na hora sem quebrar o código
+    if not isinstance(record, dict):
+         return ["Formato inválido: esperado um dicionário/objeto JSON."]
 
     # 1. Campos obrigatórios presentes e não vazios
     for field in REQUIRED_FIELDS:
@@ -82,7 +85,8 @@ def _transform(record: dict) -> dict:
     if "name" in transformed:
         transformed["name"] = transformed["name"].title()
 
-    transformed["processed_at"] = datetime.utcnow().isoformat()
+    # CORREÇÃO DO WARNING: Usando timezone-aware object
+    transformed["processed_at"] = datetime.now(timezone.utc).isoformat()
 
     return transformed
 

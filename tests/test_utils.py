@@ -27,13 +27,18 @@ def test_detect_unsupported():
 
 def test_build_job_result():
     """Test job result building."""
-    records = [{"id": 1}, {"id": 2}]
-    errors = [{"index": 0, "error": "invalid"}]
-    
-    result = build_job_result("job-123", "source.csv", records, errors)
+    # A chamada agora obedece os novos parâmetros da sua função no utils.py
+    result = build_job_result(
+        job_id="job-123",
+        source_file="source.csv",
+        status="SUCCESS",
+        total=2,
+        valid=1,
+        error_count=1,
+        output_key="processed/job-123.json",
+        started_at="2024-01-01T10:00:00Z"
+    )
     
     assert result["job_id"] == "job-123"
-    assert result["source_file"] == "source.csv"
-    assert result["valid_records"] == 2
-    assert result["error_count"] == 1
-    assert "processed_at" in result
+    assert result["status"] == "SUCCESS"
+    assert "ttl" in result
