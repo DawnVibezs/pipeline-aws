@@ -1,0 +1,8 @@
+{
+  "data": [
+    { "id": "101", "name": "Fernanda Lima",  "email": "fernanda@email.com", "city": "Recife"     },
+    { "id": "102", "name": "ROBERTO SANTOS", "email": "roberto@email.com",  "city": "Salvador"   },
+    { "id": "103", "name": "julia mendes",   "email": "julia@email.com",    "city": "Fortaleza"  },
+    { "id": "104", "name": "Sem Email",      "email": "",                   "city": "Manaus"     }
+  ]
+}
