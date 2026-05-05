@@ -75,7 +75,7 @@ No servers to manage. No manual intervention. Full observability from day one.
 
 | Layer | Technology | Why |
 |---|---|---|
-| Compute | AWS Lambda (Python 3.11) | Zero infrastructure overhead, pay-per-use |
+| Compute | AWS Lambda (Python 3.14) | Zero infrastructure overhead, pay-per-use |
 | Storage | AWS S3 | Durable, scalable object storage with event triggers |
 | Database | AWS DynamoDB | Sub-millisecond reads, serverless, built-in TTL |
 | API | AWS API Gateway | Managed routing, throttling, and TLS out of the box |
@@ -171,16 +171,25 @@ pipeline-aws/
 
 ## Running the Tests
 
+We highly recommend using a virtual environment (`venv`) to avoid version conflicts.
+
 ```bash
-# From the src/ directory
+# 1. Create the virtual environment
+python -m venv venv
+
+# 2. Activate it
+# On Windows:
+venv\Scripts\activate
+# On Linux/macOS:
+source venv/bin/activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the tests (From the src/ directory)
 cd src
-python3 -m unittest discover -s ../tests -v
+python -m unittest discover -s ../tests -v
 ```
-
-```
-Ran 47 tests in 0.083s — OK
-```
-
 ---
 
 ## Environment Variables
@@ -213,7 +222,7 @@ Designing this pipeline pushed me to think beyond "make it work" and toward "mak
 
 ---
 
-*Built with Python 3.11 · AWS Lambda · S3 · DynamoDB · API Gateway · CloudWatch*
+*Built with Python 3.14 · AWS Lambda · S3 · DynamoDB · API Gateway · CloudWatch*
 
 ---
 ---
@@ -265,14 +274,24 @@ Offset (`LIMIT 20 OFFSET 100`) degenera em tabelas grandes porque o banco precis
 
 ## Como Rodar os Testes
 
-```bash
-cd src
-python3 -m unittest discover -s ../tests -v
-```
+Recomendamos fortemente o uso de um ambiente virtual (`venv`) para evitar conflitos de dependências.
 
-```
-Ran 47 tests in 0.083s — OK
-```
+```bash
+# 1. Crie o ambiente virtual
+python -m venv venv
+
+# 2. Ative o ambiente
+# No Windows:
+venv\Scripts\activate
+# No Linux/macOS:
+source venv/bin/activate
+
+# 3. Instale as dependências
+pip install -r requirements.txt
+
+# 4. Rode os testes (A partir da pasta src/)
+cd src
+python -m unittest discover -s ../tests -v
 
 ---
 
@@ -304,4 +323,4 @@ pipeline-aws/
 
 ---
 
-*Construído com Python 3.11 · AWS Lambda · S3 · DynamoDB · API Gateway · CloudWatch*
+*Construído com Python 3.14 · AWS Lambda · S3 · DynamoDB · API Gateway · CloudWatch*
