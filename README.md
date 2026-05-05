@@ -3,7 +3,7 @@
 [🇺🇸 Read in English](#the-business-problem) | [🇧🇷 Ler em Português](#o-problema-de-negocio)
 
 [![CI](https://github.com/DawnVibez/pipeline-aws/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/DawnVibez/pipeline-aws/actions)
-![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)
 ![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-FF9900?logo=awslambda&logoColor=white)
 ![AWS S3](https://img.shields.io/badge/AWS-S3-569A31?logo=amazons3&logoColor=white)
 ![DynamoDB](https://img.shields.io/badge/AWS-DynamoDB-4053D6?logo=amazondynamodb&logoColor=white)
