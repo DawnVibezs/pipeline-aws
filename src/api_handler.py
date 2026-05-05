@@ -1,10 +1,9 @@
 import json
 import logging
-import os
 
 from auth import validate_api_key
 from routes import route_request
-from response import ok, error
+from response import error
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)

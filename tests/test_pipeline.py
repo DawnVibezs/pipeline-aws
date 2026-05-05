@@ -4,7 +4,8 @@ Execute com: pytest tests/ -v
 """
 import json
 import unittest
-from unittest.mock import MagicMock, patch
+from validator import validate_records
+from utils import detect_file_type, build_job_result
 
 # ─── Processor ────────────────────────────────────────────────────────────────
 
@@ -51,7 +52,6 @@ class TestProcessor(unittest.TestCase):
 
 # ─── Validator ────────────────────────────────────────────────────────────────
 
-from validator import validate_records
 
 
 class TestValidator(unittest.TestCase):
@@ -101,8 +101,6 @@ class TestValidator(unittest.TestCase):
 
 
 # ─── Utils ────────────────────────────────────────────────────────────────────
-
-from utils import detect_file_type, build_job_result
 
 
 class TestUtils(unittest.TestCase):

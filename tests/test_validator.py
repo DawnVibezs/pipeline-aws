@@ -1,7 +1,6 @@
 """
 Unit tests for validator module.
 """
-import pytest
 from validator import validate_records
 
 def test_validate_valid_records():
